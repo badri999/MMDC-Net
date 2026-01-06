@@ -149,4 +149,4 @@ GPL-3.0 license
 
 ## Contact
 
-For questions or issues, please open an issue on GitHub or contact [your email].
+For questions or issues, please open an issue on GitHub or contact bb2@uga.edu.
