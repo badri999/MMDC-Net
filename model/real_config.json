@@ -1,0 +1,60 @@
+{
+  "dataset_path": "/home/badri/Hard Disk Project/neuralnets/depth_fusion/real_and_virtual_combined/real_and_synthetic/",
+  "batch_size": 8,
+  "num_epochs": 300,
+  "start_epoch": 137,
+  "learning_rate": 1e-6,
+  "weight_decay": 1e-6,
+  "base_channels": 64,
+  "dropout_prob": 0.2,
+  "grad_clip": 1,
+  "use_multi_gpu": true,
+  
+  "l1_active": true,     
+  "l2_active": true,
+  "ssim_active": false,
+  "laplacian_active": false,
+
+  "l1_shadow_weight": 0.0,
+  "l1_sparse_weight": 10.0,
+  "l2_shadow_weight": 0.0,
+  "l2_sparse_weight": 100.0,
+  "ssim_shadow_weight": 0.0,
+  "ssim_sparse_weight": 1.0,
+  "laplacian_shadow_weight": 0.0,
+  "laplacian_sparse_weight": 1.0,
+  
+  "lr_factor": 0.5,
+  "lr_patience": 15,
+  
+  "num_workers": 2,
+  "pin_memory": true,
+  "augment_prob": 0.8,
+  "augment_config": {
+    "clahe": 0.01,
+    "color_jitter": 0.01,
+    "random_gamma": 0.01,
+    "gaussian_blur": 0.01,
+    "defocus": 0.01,
+    "horizontal_flip": 0.5,
+    "vertical_flip": 0.5
+  },
+
+  "freeze_sparse_branch": true,
+  "freeze_grayscale_branch": false,
+  "freeze_relative_branch": true,
+
+  "use_wandb": true,
+  "wandb_project": "hdd-depth-fusion_2_5_ck_real_and_synthetic",
+  "save_freq": 40,
+  
+  "checkpoint_dir": "checkpoints",
+  "results_dir": "results",
+  
+  "save_predictions": true,
+  "max_batches_to_save": 4,
+  "prediction_save_threshold": 4,
+  "train_batch_indices_to_save": [120, 150, 172,32],
+  "val_batch_indices_to_save": [7, 2, 8,5],
+  "test_batch_indices_to_save": [12, 1,5, 13]
+}
