@@ -1,4 +1,4 @@
-# Application-driven multi-modal depth completion in fringe projection profilometry
+# Multi Modal Depth Completion Network
 
 Official implementation of the depth completion framework published in Optics and Lasers in Engineering.
 
