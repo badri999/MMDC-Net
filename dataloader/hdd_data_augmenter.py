@@ -373,9 +373,9 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
 
-# Recommended augmentation configurations based on typical GitHub CV projects
 
-# Conservative augmentation (minimal, GitHub low-end)
+
+
 CONSERVATIVE_CONFIG = {
     'clahe': 0.1,
     'color_jitter': 0.1,
@@ -386,7 +386,7 @@ CONSERVATIVE_CONFIG = {
     'vertical_flip': 0.5,
 }
 
-# Standard augmentation (GitHub typical)
+
 STANDARD_CONFIG = {
     'clahe': 0.25,
     'color_jitter': 0.30,
@@ -397,7 +397,7 @@ STANDARD_CONFIG = {
     'vertical_flip': 0.20,
 }
 
-# Aggressive augmentation (GitHub high-end, for very limited data)
+
 AGGRESSIVE_CONFIG = {
     'clahe': 0.40,
     'color_jitter': 0.45,
