@@ -1,4 +1,4 @@
-# Multi-Modal Depth Completion with Circular Convolutions
+# Application-driven multi-modal depth completion in fringe projection profilometry
 
 Official implementation of the depth completion framework published in Optics and Lasers in Engineering.
 
