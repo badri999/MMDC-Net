@@ -54,7 +54,6 @@ dataset_root/
 │   ├── depth_anything_v2_map_1512/  # Monocular depth (PNG)
 │   ├── gt_depth/              # Ground truth depth (CSV)
 │   ├── shadow_mask_gt/        # Shadow region masks (PNG)
-│   └── background_mask_gt/    # Background masks (PNG)
 ├── valid/
 │   └── [same structure as train]
 └── test/
