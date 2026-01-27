@@ -48,12 +48,13 @@ Organize your dataset as follows:
 ```
 dataset_root/
 ├── 
-│   ├── sparse_depth_z/       # Sparse depth measurements (CSV)
-│   ├── sparse_mask/           # Validity masks (PNG)
-│   ├── grayscale/             # Grayscale images (PNG)
-│   ├── depth_anything_v2_map_1512/  # Monocular depth (PNG)
-│   ├── gt_depth/              # Ground truth depth (CSV)
-│   ├── shadow_mask_gt/        # Shadow region masks (PNG)
+│   ├── sparse_depth_z/       # Sparse depth map (with value of 0 for unreliable regions) (CSV)
+│   ├── sparse_mask/           # Masks of the all the sparse, unreliable regions in FPP measurement (PNG)
+│   ├── grayscale/             # Projector illuminated Grayscale images (PNG)
+│   ├── depth_anything_v2_map_1512/  # Relative depth output from Depth anything v2 (PNG) when projector illuminated grayscale image is input to it 
+│   ├── gt_depth/              # Ground truth depth map (CSV)
+│   ├── shadow_mask_gt/        # Shadow region masks extracted from performing FPP on ground truth (PNG)
+    ├── background_mask_gt/    # The code does not need and does not use background masks. The user can create random png files with a size greater than 512 x  512. The code loads these and center crops to 512 x 512 in but they are not used in training or inference.                                     User can disable in the dataloader script if they wish, but this is provided just in case the user wants to experiment with adding in background masks
 ├── valid/
 │   └── [same structure as train]
 └── test/
