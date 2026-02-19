@@ -12,6 +12,7 @@ dependencies:
   - pillow
   - pyyaml
   - networkx
+  - pandas
   - pip
   - pip:
     - opencv-python
