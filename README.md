@@ -28,7 +28,7 @@ The model consists of four main branches:
 
 Each parallel branch uses an encoder-decoder architecture with skip connections. The fusion branch integrates outputs and encoder features from all three modalities to predict dense depth maps.
 <p align="center">
-  <img src="assets/mmdc_net_architecture.png" width="800" title="MMDC-Net Architecture">
+  <img src="assets/mmdc_net_architecture.jpg" width="800" title="MMDC-Net Architecture">
 </p>
 <p align="center">
   <em>Figure: The proposed MMDC-Net architecture. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
