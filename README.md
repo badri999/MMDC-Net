@@ -6,7 +6,14 @@ Official Pytorch implementation of the depth completion framework published in O
 
 ## Overview
 
-This repository implements a multi-modal depth completion network that fuses sparse depth measurements, grayscale imagery, and monocular depth estimates to generate dense depth maps. The model employs circular convolutions and a multi-branch architecture optimized for efficient inference (~2.5M parameters).
+This repository implements a multi-modal depth completion network that fuses sparse depth measurements, grayscale imagery, and monocular depth estimates to generate dense depth maps. The model employs circular convolutions and a multi-branch architecture optimized for efficient inference (~2.5M parameters). The overall framework is outlined below:
+
+<p align="center">
+  <img src="assets/framework_overview.jpg" width="800" title="Overall Depth Completion Framework">
+</p>
+<p align="center">
+  <em>Figure 1: Overall workflow of the proposed depth completion approach. The system takes three complementary inputs: (1) sparse depth map from FPP with unreliable regions masked, (2) projector-illuminated grayscale image, and (3) relative depth map from Depth Anything v2. These inputs feed into MMDC-Net, a lightweight multi-modal fusion network trained on synthetic data and fine-tuned on real-world data. The network predicts dense depth in regions where FPP fails, which is combined with reliable FPP measurements to produce a complete depth map of the hard drive. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
+</p>
 
 ## Sample Results
 
@@ -14,7 +21,7 @@ This repository implements a multi-modal depth completion network that fuses spa
   <img src="assets/mmdc_net_results.jpg" width="800" title="MMDC-Net Sample Results">
 </p>
 <p align="center">
-  <em>Figure 1: MMDC-Net sample results showing depth completion on hard drives. MMDC-Net successfully recovers geometry where traditional fringe projection fails. (a) Ground Truth | (b) Our Method (FPP + MMDC-Net) | (c) MMDC-Net prediction on sparse regions | (d) Ground Truth on sparse regions | (e) Error map <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
+  <em>Figure 2: MMDC-Net sample results showing depth completion on hard drives. MMDC-Net successfully recovers geometry where traditional fringe projection fails. (a) Ground Truth | (b) Our Method (FPP + MMDC-Net) | (c) MMDC-Net prediction on sparse regions | (d) Ground Truth on sparse regions | (e) Error map <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
 </p>
 
 ## Key Features
@@ -40,7 +47,7 @@ Each parallel branch uses an encoder-decoder architecture with skip connections.
   <img src="assets/mmdc_net_architecture.jpg" width="800" title="MMDC-Net Architecture">
 </p>
 <p align="center">
-  <em>Figure 2: The proposed MMDC-Net architecture. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
+  <em>Figure 3: The proposed MMDC-Net architecture. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
 </p>
 
 ## Installation
