@@ -61,24 +61,34 @@ conda activate mmdc-net
 
 **Important:** The training data resides directly in the root folder. The validation and test sets are nested subfolders.
 
-```
+```text
 dataset_root/
 ├── sparse_depth_z/              # [Training] Sparse depth map (CSV)
 ├── sparse_mask/                 # [Training] Masks of unreliable regions (PNG)
 ├── grayscale/                   # [Training] Projector-illuminated images (PNG)
-├── depth_anything_v2_map_1512/  # [Training] Relative depth maps (PNG)
-├── gt_depth/                    # [Training] Ground truth depth (CSV)
+├── depth_anything_v2_map_1512/  # [Training] Relative depth from Depth-Anything-V2 (PNG)
+├── gt_depth/                    # [Training] Ground truth depth map (CSV)
 ├── shadow_mask_gt/              # [Training] Shadow region masks (PNG)
-├── background_mask_gt/          # [Training] (Optional) Background masks (PNG)
+├── background_mask_gt/          # [Training] (Required folder) Background masks (PNG)
 │
-├── valid/                       # [Validation] Nested folder with same structure
+├── valid/                       # [Validation] Nested folder
 │   ├── sparse_depth_z/
-│   └── ...
+│   ├── sparse_mask/
+│   ├── grayscale/
+│   ├── depth_anything_v2_map_1512/
+│   ├── gt_depth/
+│   ├── shadow_mask_gt/
+│   └── background_mask_gt/
 │
-└── test/                        # [Test] Nested folder with same structure
-├── sparse_depth_z/
-└── ...
-```
+└── test/                        # [Test] Nested folder
+    ├── sparse_depth_z/
+    ├── sparse_mask/
+    ├── grayscale/
+    ├── depth_anything_v2_map_1512/
+    ├── gt_depth/
+    ├── shadow_mask_gt/
+    └── background_mask_gt/
+
 > **Note on Background Masks:** The `background_mask_gt` folder is **required** by the dataloader structure, even though the masks are not currently used for training or inference. You must ensure this folder exists (populated with dummy 512x512 PNGs if you wish) to avoid file path errors.
 
 ## Usage
