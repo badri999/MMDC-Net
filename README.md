@@ -12,7 +12,7 @@ This repository implements a multi-modal depth completion network that fuses spa
   <img src="assets/framework_overview.jpg" width="800" title="Overall Depth Completion Framework">
 </p>
 <p align="center">
-  <em>Figure 1: Overall workflow of the proposed depth completion approach. The system takes three complementary inputs: (1) sparse depth map from FPP with unreliable regions masked, (2) projector-illuminated grayscale image, and (3) relative depth map from Depth Anything v2. These inputs feed into MMDC-Net, a lightweight multi-modal fusion network trained on synthetic data and fine-tuned on real-world data. The network predicts dense depth in regions where FPP fails, which is combined with reliable FPP measurements to produce a complete depth map of the hard drive. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
+  <em>Figure 1: Overall workflow of the proposed approach. MMDC-Net fuses sparse FPP depth, grayscale imagery, and relative depth priors to recover dense geometry in unreliable regions. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
 </p>
 
 ## Sample Results
