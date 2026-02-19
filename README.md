@@ -44,6 +44,7 @@ Each parallel branch uses an encoder-decoder architecture with skip connections.
 <p align="center">
   <em>Figure: The proposed MMDC-Net architecture. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
 </p>
+
 ## Installation
 
 ```bash
@@ -61,7 +62,6 @@ conda activate mmdc-net
 
 **Important:** The training data resides directly in the root folder. The validation and test sets are nested subfolders.
 
-```text
 dataset_root/
 ├── sparse_depth_z/              # [Training] Sparse depth map (CSV)
 ├── sparse_mask/                 # [Training] Masks of unreliable regions (PNG)
