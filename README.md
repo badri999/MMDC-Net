@@ -1,6 +1,6 @@
 # Multi Modal Depth Completion Network
 
-Official implementation of the depth completion framework published in Optics and Lasers in Engineering.
+Official Pytorch implementation of the depth completion framework published in Optics and Lasers in Engineering.
 
 **Paper:** [https://doi.org/10.1016/j.optlaseng.2025.109587](https://doi.org/10.1016/j.optlaseng.2025.109587)
 
