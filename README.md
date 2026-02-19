@@ -113,9 +113,6 @@ python hdd_training_script_2_5_ck.py \
 
 Use existing json files in repo
 
-
-
-```markdown
 ### Inference
 
 ```bash
