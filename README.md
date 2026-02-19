@@ -8,16 +8,17 @@ Official Pytorch implementation of the depth completion framework published in O
 
 This repository implements a multi-modal depth completion network that fuses sparse depth measurements, grayscale imagery, and monocular depth estimates to generate dense depth maps. The model employs circular convolutions and a multi-branch architecture optimized for efficient inference (~2.5M parameters).
 
-## Qualitative Results
-![Qualitative Results](assets/mmdc_net_results.jpg)
+## Sample Results
 
-Depth completion on Hard Drives. MMDC-Net successfully recovers geometry where traditional fringe projection fails. [Balasubramaniam et al. (2026)](https://doi.org/10.1016/j.optlaseng.2025.109587).
+<p align="center">
+  <img src="assets/mmdc_net_results.jpg" width="800" title="MMDC-Net Sample Results">
+</p>
+<p align="center">
+  <em>Figure: * **(a)** * **(b)** Our Method (FPP + MMDC-Net) * **(c)** MMDC-Net prediction on sparse regions * **(d)** Ground Truth on sparse regions * **(e)** Error map <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
+</p>
 
-* **(a)** Ground Truth
-* **(b)** Our Method (FPP + MMDC-Net)
-* **(c)** MMDC-Net prediction on sparse regions
-* **(d)** Ground Truth on sparse regions
-* **(e)** Error map
+Depth completion on Hard Drives. MMDC-Net successfully recovers geometry where traditional fringe projection fails.
+
 
 ## Key Features
 
