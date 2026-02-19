@@ -114,9 +114,12 @@ python hdd_training_script_2_5_ck.py \
 Use existing json files in repo
 
 
+
+```markdown
 ### Inference
 
-Please run inference_script.py
+```bash
+python inference_script.py
 ```
 
 ## Model Components
@@ -173,7 +176,8 @@ GPL-3.0 license
 
 - Depth-Anything-v2 for monocular depth estimation
 - PyTorch-MSSSIM for SSIM loss implementation
-- Circular Convolution Implementation by https://github.com/JHL-HUST/CircularKernel  
+- Circular Convolution Implementation by https://github.com/JHL-HUST/CircularKernel
+- [Albumentations](https://albumentations.ai/) for the data augmentation pipeline
 
 ## Contact
 
