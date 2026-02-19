@@ -14,11 +14,8 @@ This repository implements a multi-modal depth completion network that fuses spa
   <img src="assets/mmdc_net_results.jpg" width="800" title="MMDC-Net Sample Results">
 </p>
 <p align="center">
-  <em>Figure: * **(a)** * **(b)** Our Method (FPP + MMDC-Net) * **(c)** MMDC-Net prediction on sparse regions * **(d)** Ground Truth on sparse regions * **(e)** Error map <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
+  <em>Figure 1: MMDC-Net sample results showing depth completion on hard drives. MMDC-Net successfully recovers geometry where traditional fringe projection fails. (a) Ground Truth | (b) Our Method (FPP + MMDC-Net) | (c) MMDC-Net prediction on sparse regions | (d) Ground Truth on sparse regions | (e) Error map <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
 </p>
-
-Depth completion on Hard Drives. MMDC-Net successfully recovers geometry where traditional fringe projection fails.
-
 
 ## Key Features
 
@@ -43,7 +40,7 @@ Each parallel branch uses an encoder-decoder architecture with skip connections.
   <img src="assets/mmdc_net_architecture.jpg" width="800" title="MMDC-Net Architecture">
 </p>
 <p align="center">
-  <em>Figure: The proposed MMDC-Net architecture. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
+  <em>Figure 2: The proposed MMDC-Net architecture. <a href="https://doi.org/10.1016/j.optlaseng.2025.109587">Balasubramaniam et al. (2026)</a>.</em>
 </p>
 
 ## Installation
