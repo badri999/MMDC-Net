@@ -48,34 +48,38 @@ Each parallel branch uses an encoder-decoder architecture with skip connections.
 
 ```bash
 # Clone the repository
+git clone [https://github.com/badri999/MMDC-Net.git](https://github.com/badri999/MMDC-Net.git)
+cd MMDC-Net
 
+# Create the environment from the file
+conda env create -f environment.yml
 
-# Create virtual environment
-
-
-# Install dependencies in environment.yml
-
-```
+# Activate the environment
+conda activate mmdc-net
 
 ## Dataset Structure
 
-Organize your dataset as follows:
+**Important:** The training data resides directly in the root folder. The validation and test sets are nested subfolders.
 
 ```
 dataset_root/
-├── 
-│   ├── sparse_depth_z/       # Sparse depth map (with value of 0 for unreliable regions) (CSV)
-│   ├── sparse_mask/           # Masks of the all the sparse, unreliable regions in FPP measurement (PNG)
-│   ├── grayscale/             # Projector illuminated Grayscale images (PNG)
-│   ├── depth_anything_v2_map_1512/  # Relative depth output from Depth anything v2 (PNG) when projector illuminated grayscale image is input to it 
-│   ├── gt_depth/              # Ground truth depth map (CSV)
-│   ├── shadow_mask_gt/        # Shadow region masks extracted from performing FPP on ground truth (PNG)
-    ├── background_mask_gt/    # The code does not need and does not use background masks. The user can create random png files with a size greater than 512 x  512. The code loads these and center crops to 512 x 512 in but they are not used in training or inference.                                     User can disable in the dataloader script if they wish, but this is provided just in case the user wants to experiment with adding in background masks
-├── valid/
-│   └── [same structure as train]
-└── test/
-    └── [same structure as train]
+├── sparse_depth_z/              # [Training] Sparse depth map (CSV)
+├── sparse_mask/                 # [Training] Masks of unreliable regions (PNG)
+├── grayscale/                   # [Training] Projector-illuminated images (PNG)
+├── depth_anything_v2_map_1512/  # [Training] Relative depth maps (PNG)
+├── gt_depth/                    # [Training] Ground truth depth (CSV)
+├── shadow_mask_gt/              # [Training] Shadow region masks (PNG)
+├── background_mask_gt/          # [Training] (Optional) Background masks (PNG)
+│
+├── valid/                       # [Validation] Nested folder with same structure
+│   ├── sparse_depth_z/
+│   └── ...
+│
+└── test/                        # [Test] Nested folder with same structure
+├── sparse_depth_z/
+└── ...
 ```
+> **Note on Background Masks:** The `background_mask_gt` folder is **required** by the dataloader structure, even though the masks are not currently used for training or inference. You must ensure this folder exists (populated with dummy 512x512 PNGs if you wish) to avoid file path errors.
 
 ## Usage
 
